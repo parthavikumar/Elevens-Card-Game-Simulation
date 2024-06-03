@@ -67,9 +67,7 @@ public class ElevensBoard extends Board {
 	 * @return true if there is a legal play left on the board;
 	 *         false otherwise.
 	 */
-	@Override
 	public boolean anotherPlayIsPossible() {
-		/* *** TO BE MODIFIED IN ACTIVITY 11 *** */
 		List<Integer> cIndexes = cardIndexes();
 		return containsPairSum11(cIndexes) || containsJQK(cIndexes);
 	}
@@ -83,7 +81,6 @@ public class ElevensBoard extends Board {
 	 *         an empty list, if an 11-pair was not found.
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
-		/* *** TO BE CHANGED INTO findPairSum11 IN ACTIVITY 11 *** */
 		for (int sk1 = 0; sk1 < selectedCards.size(); sk1++) {
 			int k1 = selectedCards.get(sk1).intValue();
 			for (int sk2 = sk1 + 1; sk2 < selectedCards.size(); sk2++) {
@@ -105,7 +102,6 @@ public class ElevensBoard extends Board {
 	 *         an empty list, if a JQK was not found.
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
-		/* *** TO BE CHANGED INTO findJQK IN ACTIVITY 11 *** */
 		boolean foundJack = false;
 		boolean foundQueen = false;
 		boolean foundKing = false;
@@ -121,33 +117,7 @@ public class ElevensBoard extends Board {
 		}
 		return foundJack && foundQueen && foundKing;
 	}
-
-	/**
-	 * Looks for a legal play on the board.  If one is found, it plays it.
-	 * @return true if a legal play was found (and made); false othewise.
-	 */
-	public boolean playIfPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		return false; // REPLACE !
-	}
-
-	/**
-	 * Looks for a pair of non-face cards whose values sum to 11.
-	 * If found, replace them with the next two cards in the deck.
-	 * The simulation of this game uses this method.
-	 * @return true if an 11-pair play was found (and made); false othewise.
-	 */
-	private boolean playPairSum11IfPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		 return false; // REPLACE !
-	}
-
-	/**
-	 * Looks for a group of three face cards JQK.
-	 * If found, replace them with the next three cards in the deck.
-	 * The simulation of this game uses this method.
-	 * @return true if a JQK play was found (and made); false othewise.
-	 */
+}
 	private boolean playJQKIfPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
 		return false; // REPLACE !
