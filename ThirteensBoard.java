@@ -46,7 +46,6 @@ public class ThirteensBoard extends Board {
 	 * @return true if the selected cards form a valid group for removal;
 	 *         false otherwise.
 	 */
-	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
 		/* *** TO BE MODIFIED IN ACTIVITY 11 *** */
 		if (selectedCards.size() == 1) {
@@ -65,9 +64,7 @@ public class ThirteensBoard extends Board {
 	 * @return true if there is a legal play left on the board;
 	 *         false otherwise.
 	 */
-	@Override
 	public boolean anotherPlayIsPossible() {
-		/* *** TO BE MODIFIED IN ACTIVITY 11 *** */
 		List<Integer> cIndexes = cardIndexes();
 		return containsPairSum13(cIndexes) || containsKing(cIndexes);
 	}
@@ -103,7 +100,6 @@ public class ThirteensBoard extends Board {
 	 *         an empty list, if a king was not found.
 	 */
 	private boolean containsKing(List<Integer> selectedCards) {
-		/* *** TO BE CHANGED INTO findKing IN ACTIVITY 11 *** */
 		for (Integer kObj : selectedCards) {
 			int k = kObj.intValue();
 			if (cardAt(k).rank().equals("king")) {
@@ -111,36 +107,5 @@ public class ThirteensBoard extends Board {
 			}
 		}
 		return false;
-	}
-
-	/**
-	 * Looks for a legal play on the board.  If one is found, it plays it.
-	 * @return true if a legal play was found (and made); false othewise.
-	 */
-	public boolean playIfPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		return false; // REPLACE !
-	}
-
-	/**
-	 * Looks for a pair of non-face cards whose values sum to 13.
-	 * If found, replace them with the next two cards in the deck.
-	 * The simulation of this game uses this method.
-	 * @return true if an 13-pair play was found (and made); false othewise.
-	 */
-	private boolean playPairSum13IfPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		return false; // REPLACE !
-	}
-
-	/**
-	 * Looks for a King.
-	 * If found, replace it with the next card in the deck.
-	 * The simulation of this game uses this method.
-	 * @return true if a king play was found (and made); false othewise.
-	 */
-	private boolean playKingIfPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		return false; // REPLACE !
 	}
 }
